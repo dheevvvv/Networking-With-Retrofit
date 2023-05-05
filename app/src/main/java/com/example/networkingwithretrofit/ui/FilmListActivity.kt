@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.networkingwithretrofit.R
 import com.example.networkingwithretrofit.adapter.FilmAdapter
 import com.example.networkingwithretrofit.adapter.NewsAdapter
 import com.example.networkingwithretrofit.databinding.ActivityFilmListBinding
@@ -16,16 +17,42 @@ import com.example.networkingwithretrofit.databinding.ActivityMainBinding
 import com.example.networkingwithretrofit.model.ResponseDataFilmItem
 import com.example.networkingwithretrofit.networking.RetrofitClient
 import com.example.networkingwithretrofit.viewmodel.FilmViewModel
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Response
 
 class FilmListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFilmListBinding
     private lateinit var filmViewModel: FilmViewModel
+    // declare the GoogleSignInClient
+    lateinit var mGoogleSignInClient: GoogleSignInClient
+
+    private val auth by lazy {
+        FirebaseAuth.getInstance()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFilmListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // call requestIdToken as follows
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        binding.btnLogout.setOnClickListener {
+            mGoogleSignInClient.signOut().addOnCompleteListener {
+                val intent = Intent(this, LoginActivity::class.java)
+                Toast.makeText(this, "Logging Out", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+                finish()
+            }
+        }
 
         //trigger crashlytics
         val crashButton = Button(this)

@@ -14,6 +14,15 @@
         android:theme="@style/Theme.NetworkingWithRetrofit"
         tools:targetApi="31">
         <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.UpdateFilmActivity"
             android:exported="false" />
         <activity
@@ -22,11 +31,7 @@
         <activity
             android:name=".ui.FilmListActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

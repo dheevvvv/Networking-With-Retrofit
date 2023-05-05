@@ -22,8 +22,9 @@
 
     <Button
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="false"
-        android:id="@+id/crashButton"
+        android:layout_alignParentEnd="false"
+        android:id="@+id/btnLogout"
+        android:text="@string/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
