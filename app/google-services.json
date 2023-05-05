@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "567892269064",
+    "project_id": "topic4firebase",
+    "storage_bucket": "topic4firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567892269064:android:2cf3736039634f7165d9bd",
+        "android_client_info": {
+          "package_name": "com.example.networkingwithretrofit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567892269064-h0pmck08rhf61k5afm1eev1nbcrrqosr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.networkingwithretrofit",
+            "certificate_hash": "964e6bb28ff4543f0b894bd660554c40adbf4dc7"
+          }
+        },
+        {
+          "client_id": "567892269064-rvofuuqsj8c06c28bi53b0ub0g9tafpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4pExUvuMnzRAUlfG7od6g6gj7ujOrmaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567892269064-rvofuuqsj8c06c28bi53b0ub0g9tafpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
