@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.networkingwithretrofit.databinding.ItemFilmBinding
 import com.example.networkingwithretrofit.model.ResponseDataFilmItem
-import com.example.networkingwithretrofit.ui.UpdateFilmActivity
+import com.example.networkingwithretrofit.view.UpdateFilmActivity
 
 class FilmAdapter(var listFilm: List<ResponseDataFilmItem>):RecyclerView.Adapter<FilmAdapter.ViewHolder>() {
 

@@ -1,4 +1,4 @@
-package com.example.networkingwithretrofit.ui
+package com.example.networkingwithretrofit.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

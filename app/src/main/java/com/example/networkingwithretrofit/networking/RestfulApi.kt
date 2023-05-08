@@ -3,6 +3,7 @@ package com.example.networkingwithretrofit.networking
 import com.example.networkingwithretrofit.model.PostDataFilm
 import com.example.networkingwithretrofit.model.ResponseDataFilmItem
 import com.example.networkingwithretrofit.model.ResponseDataNewsItem
+import com.example.networkingwithretrofit.model.ResponseDataUserItem
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -25,4 +26,7 @@ interface RestfulApi {
         @Path("id") id:Int,
         @Body request: PostDataFilm
     ) : Call<ResponseDataFilmItem>
+
+    @GET("user")
+    fun getAllUser(): Call<List<ResponseDataUserItem>>
 }

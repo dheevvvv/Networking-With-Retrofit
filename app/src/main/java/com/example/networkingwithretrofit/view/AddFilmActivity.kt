@@ -1,13 +1,11 @@
-package com.example.networkingwithretrofit.ui
+package com.example.networkingwithretrofit.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.networkingwithretrofit.databinding.ActivityAddFilmBinding
-import com.example.networkingwithretrofit.databinding.ActivityFilmListBinding
 import com.example.networkingwithretrofit.viewmodel.FilmViewModel
 
 class AddFilmActivity : AppCompatActivity() {

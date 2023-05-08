@@ -1,4 +1,4 @@
-package com.example.networkingwithretrofit.ui
+package com.example.networkingwithretrofit.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,9 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.networkingwithretrofit.R
 import com.example.networkingwithretrofit.adapter.FilmAdapter
-import com.example.networkingwithretrofit.adapter.NewsAdapter
 import com.example.networkingwithretrofit.databinding.ActivityFilmListBinding
-import com.example.networkingwithretrofit.databinding.ActivityMainBinding
 import com.example.networkingwithretrofit.model.ResponseDataFilmItem
 import com.example.networkingwithretrofit.networking.RetrofitClient
 import com.example.networkingwithretrofit.viewmodel.FilmViewModel
@@ -80,6 +78,9 @@ class FilmListActivity : AppCompatActivity() {
             if (it!=null){
                 binding.rvFilm.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
                 binding.rvFilm.adapter = FilmAdapter(it.sortedByDescending{it.id})
+            }
+            else{
+                Toast.makeText(this, "null", Toast.LENGTH_SHORT).show()
             }
         })
     }
